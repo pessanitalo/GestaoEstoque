@@ -1,0 +1,49 @@
+<div class="container main-container">
+
+    <h1>Lista de Produtos</h1>
+    <hr>
+
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    Código
+                </th>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    Desc. Produto
+                </th>
+                <th>
+                    Quantidade Atual
+                </th>
+                <th></th>
+                <th></th>
+                
+            </tr>
+        </thead>
+        <tbody *ngFor="let prod of produtos">
+            <td>
+                {{ prod.cod }} 
+            </td>
+
+            <td>
+               {{ prod.nome }}
+            </td>
+
+            <td>
+                {{ prod.descProd }}
+            </td>
+
+            <td>
+                {{ prod.qtdAtual }}
+            </td>
+
+            <td>
+            <button type="button" class="btn btn-primary">Detalhes</button>
+            <button type="button" class="btn btn-info">Adicinar Produto</button>
+            <button type="button" class="btn btn-danger">Deletar</button></td>
+        </tbody>
+    </table>
+</div>
