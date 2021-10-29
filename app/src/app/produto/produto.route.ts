@@ -1,3 +1,4 @@
+import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
 import { NovoComponent } from './novo/novo.component';
 import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.component';
 import { ListComponent } from './list/list.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
       resolve: { produto: ProdutoResolve}
   },
   { path: 'new', component: NovoComponent },
+  { path: 'editar/:id', component: EditarProdutoComponent,resolve: { produto: ProdutoResolve} },
 ];
 
 @NgModule({

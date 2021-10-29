@@ -8,7 +8,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ProdutoResolve } from './Services/produto.resolve';
 import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.component';
 import { NovoComponent } from './novo/novo.component';
-import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { EditarProdutoComponent } from './editar-produto/editar-produto.component'
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { NgxMaskModule, IConfig } from 'ngx-mask'
   [
     ListComponent,
     ProdutoDetalheComponent,
-    NovoComponent
+    NovoComponent,
+    EditarProdutoComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,21 @@
+<p>editar-produto works!</p>
+
+<div class="container">
+    <div class="card" style="width: 35rem;">
+        <div class="card-header">
+          Detalhes do Produto: <strong> {{produto.nome}} </strong> 
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Nome: {{produto.nome}}</li>
+          <li class="list-group-item">Descrição: {{produto.descProd}}</li>
+          <li class="list-group-item">Quantidade Atual: {{produto.qtdAtual}}</li>
+          <li class="list-group-item">Data Cadastro: {{produto.dataCad }}</li>
+          <li class="list-group-item">Data Saida: {{produto.dataSaida}}</li>
+        </ul>
+      </div>
+      <br>
+
+      <input class="form-control" id="qtdAtual" type="text" formControlName="qtdAtual"  placeholder="Digite a nova quantidade"/>
+      <button type="button" class="btn btn-primary" >Adicionar</button><br>
+      <button type="button" class="btn btn-danger" >Retirar</button>
+</div>
