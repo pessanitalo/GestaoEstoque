@@ -1,0 +1,64 @@
+<div class="container">
+    <h3>Novo Produto </h3>
+
+    <hr>
+    <div class="row">
+        <div class="col-md-10">
+            <form enctype="multipart/form-data" (ngSubmit)="novoProduto()" [formGroup]="produtoForm">
+
+                <div class="form-group">
+                    <label class="control-label">Código</label>
+                    <input class="form-control" id="cod" type="text" formControlName="cod" />
+
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Nome</label>
+                    <div>
+                        <input class="form-control" id="nome" type="text" formControlName="nome" />
+
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Descrição do Produto</label>
+                    <div>
+                        <input class="form-control" id="descProd" type="text" formControlName="descProd" />
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Quantidade Mensal</label>
+                    <div>
+                        <input class="form-control" id="qtdMensal" type="text" formControlName="qtdMensal" />
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Quantidade Atual</label>
+                    <div>
+                        <input class="form-control" id="qtdAtual" type="text" formControlName="qtdAtual" />
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Data cadastro</label>
+                    <div>
+                        <input class="form-control" id="dataCad" type="text" formControlName="dataCad" mask="d0/M0/0000"/>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <a class="btn btn-info" href="/produto/listar-todos">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

@@ -2,7 +2,7 @@
 
 namespace webApi.Migrations
 {
-    public partial class Init : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +14,7 @@ namespace webApi.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Cod = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(nullable: true),
-                    DescProd = table.Column<int>(nullable: false),
+                    DescProd = table.Column<string>(nullable: true),
                     QtdMensal = table.Column<int>(nullable: false),
                     QtdAtual = table.Column<int>(nullable: false),
                     DataCad = table.Column<string>(nullable: true),

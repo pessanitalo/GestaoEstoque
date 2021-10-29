@@ -1,0 +1,18 @@
+
+<div class="container">
+    <div class="card" style="width: 35rem;">
+        <div class="card-header">
+          Detalhes do Produto: <strong> {{produto.nome}} </strong> 
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Id: {{produto.id}}</li>
+          <li class="list-group-item">Código: {{produto.cod}}</li>
+          <li class="list-group-item">Nome: {{produto.nome}}</li>
+          <li class="list-group-item">Descrição: {{produto.descProd}}</li>
+          <li class="list-group-item">Quantidade Atual: {{produto.qtdAtual}}</li>
+          <li class="list-group-item">Data Cadastro: {{produto.dataCad }}</li>
+          <li class="list-group-item">Data Saida: {{produto.dataSaida}}</li>
+        </ul>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="returnList()">Voltar</button>
+</div>
