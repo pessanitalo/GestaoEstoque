@@ -5,6 +5,6 @@ export interface Produto {
     descProd: string,
     qtdMensal: number,
     qtdAtual: number,
-    dataCad: string,
+    dataCad: string ,
     dataSaida: string
 }

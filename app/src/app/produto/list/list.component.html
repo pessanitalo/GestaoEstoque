@@ -45,25 +45,7 @@
             <td>
             <button type="button" class="btn btn-primary" [routerLink]="['/produto/detalhe',prod.id]" >Detalhes</button>
             <button type="button" class="btn btn-info" [routerLink]="['/produto/editar',prod.id]">Atualizar Quantidade</button>
-            <button type="button" class="btn btn-danger">Deletar</button></td>
+            <button type="button" class="btn btn-danger" [routerLink]="['/produto/deletar',prod.id]">Deletar</button></td>
         </tbody>
     </table>
 </div>
-
-<!-- <ng-template #template>
-    <div class="modal-header">
-      <h4 class="modal-title pull-left">Detalhes item:</h4>
-      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
-        <span aria-hidden="true" class="visually-hidden">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-        <ul *ngFor="let prod of produto">
-            <li>{{prod.nome}}</li>
-            <li>A second item</li>
-            <li>A third item</li>
-            <li>A fourth item</li>
-            <li>And a fifth one</li>
-          </ul>
-    </div>
-  </ng-template> -->

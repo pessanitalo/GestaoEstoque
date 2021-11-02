@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="card" style="width: 35rem;">
+    <div class="card-header">
+      Detalhes do Produto: <strong> {{produto.nome}} </strong>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Id: {{produto.id}}</li>
+      <li class="list-group-item">Código: {{produto.cod}}</li>
+      <li class="list-group-item">Nome: {{produto.nome}}</li>
+      <li class="list-group-item">Descrição: {{produto.descProd}}</li>
+      <li class="list-group-item">Quantidade Atual: {{produto.qtdAtual}}</li>
+      <li class="list-group-item">Data Cadastro: {{produto.dataCad | mask:"d0/M0/0000"}}</li>
+      <li class="list-group-item">Data Saida: {{produto.dataSaida | mask:"d0/M0/0000"}}</li>
+    </ul>
+  </div>
+  <button type="button" class="btn btn-danger" (click)="openModal(template)">Deletar</button>
+  <button type="button" class="btn btn-secondary" (click)="returnList()">Voltar</button>
+</div>
+
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Remover Item: {{produto.cod}}</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Tem certeza que deseja remover o item? {{produto.nome}} </p>
+  </div>
+  <button type="button" class="btn btn-secondary" (click)="returnList()">Voltar</button>
+  <button type="button" class="btn btn-secondary" (click)="returnList()">Voltar</button>
+</ng-template>

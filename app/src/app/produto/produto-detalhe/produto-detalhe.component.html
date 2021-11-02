@@ -10,8 +10,8 @@
           <li class="list-group-item">Nome: {{produto.nome}}</li>
           <li class="list-group-item">Descrição: {{produto.descProd}}</li>
           <li class="list-group-item">Quantidade Atual: {{produto.qtdAtual}}</li>
-          <li class="list-group-item">Data Cadastro: {{produto.dataCad }}</li>
-          <li class="list-group-item">Data Saida: {{produto.dataSaida}}</li>
+          <li class="list-group-item">Data Cadastro: {{produto.dataCad | mask:"d0/M0/0000"}}</li>
+          <li class="list-group-item">Data Saida: {{produto.dataSaida | mask:"d0/M0/0000"}}</li>
         </ul>
       </div>
       <button type="button" class="btn btn-primary" (click)="returnList()">Voltar</button>

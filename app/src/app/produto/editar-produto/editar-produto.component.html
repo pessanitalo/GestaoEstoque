@@ -1,21 +1,47 @@
-<p>editar-produto works!</p>
+<div class="container topo">
+  <p>Alterar Estoque: {{produto.nome}}</p>
+  <div class="card" style="width: 35rem;">
+    <div class="card-header">
+      Detalhes do Produto: <strong> {{produto.nome}} </strong>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Nome: {{produto.nome}}</li>
+      <li class="list-group-item">Descrição: {{produto.descProd}}</li>
+      <li class="list-group-item">Quantidade Atual: {{produto.qtdAtual}}</li>
+      <li class="list-group-item">Data Cadastro: {{produto.dataCad | mask:"d0/M0/0000"}}</li>
+      <li class="list-group-item">Data Saida: {{produto.dataSaida | mask:"d0/M0/0000"}}</li>
+    </ul>
+  </div>
+  <br>
+  <div class="container">
+    <form>
 
-<div class="container">
-    <div class="card" style="width: 35rem;">
-        <div class="card-header">
-          Detalhes do Produto: <strong> {{produto.nome}} </strong> 
+
+      <div class="row">
+        <div class="col-mb-6">
+          <input type="text" class="form-control">
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Nome: {{produto.nome}}</li>
-          <li class="list-group-item">Descrição: {{produto.descProd}}</li>
-          <li class="list-group-item">Quantidade Atual: {{produto.qtdAtual}}</li>
-          <li class="list-group-item">Data Cadastro: {{produto.dataCad }}</li>
-          <li class="list-group-item">Data Saida: {{produto.dataSaida}}</li>
-        </ul>
+        <div class="col-mb-3">
+          <button type="button" class="btn btn-primary">Adicionar Item</button>
+        </div>
       </div>
-      <br>
 
-      <input class="form-control" id="qtdAtual" type="text" formControlName="qtdAtual"  placeholder="Digite a nova quantidade"/>
-      <button type="button" class="btn btn-primary" >Adicionar</button><br>
-      <button type="button" class="btn btn-danger" >Retirar</button>
+      <div class="row">
+        <div class="col-mb-6">
+          <input type="text" class="form-control">
+        </div>
+
+        <div class="col-mb-3">
+          <button type="button" class="btn btn-danger">Remover Item</button>
+        </div>
+      </div>
+
+      <div>
+        <button type="submit" class="btn btn-primary">Voltar</button>
+      </div>
+
+    </form>
+  </div>
+
+
 </div>

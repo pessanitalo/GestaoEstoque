@@ -9,7 +9,8 @@ import { ProdutoResolve } from './Services/produto.resolve';
 import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.component';
 import { NovoComponent } from './novo/novo.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
-import { EditarProdutoComponent } from './editar-produto/editar-produto.component'
+import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
+import { DeletarProdutoComponent } from './deletar-produto/deletar-produto.component'
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { EditarProdutoComponent } from './editar-produto/editar-produto.componen
     ListComponent,
     ProdutoDetalheComponent,
     NovoComponent,
-    EditarProdutoComponent
+    EditarProdutoComponent,
+    DeletarProdutoComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,7 @@ import { EditarProdutoComponent } from './editar-produto/editar-produto.componen
     FormsModule,
     ReactiveFormsModule,
     ModalModule.forRoot(),
-    //NgxMaskModule.forRoot(),
+    NgxMaskModule.forRoot(),
   ],
   providers:[
   ProdutoService,

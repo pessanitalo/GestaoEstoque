@@ -1,3 +1,4 @@
+import { DeletarProdutoComponent } from './deletar-produto/deletar-produto.component';
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
 import { NovoComponent } from './novo/novo.component';
 import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.component';
@@ -10,11 +11,13 @@ import { ProdutoResolve } from './Services/produto.resolve';
 const routes: Routes = [
   { path: 'listar-todos', component: ListComponent },
   
-    { path: 'detalhe/:id', component: ProdutoDetalheComponent,
-      resolve: { produto: ProdutoResolve}
-  },
   { path: 'new', component: NovoComponent },
-  { path: 'editar/:id', component: EditarProdutoComponent,resolve: { produto: ProdutoResolve} },
+
+  {path: 'detalhe/:id', component: ProdutoDetalheComponent,resolve: { produto: ProdutoResolve }},
+  
+  { path: 'editar/:id', component: EditarProdutoComponent, resolve: { produto: ProdutoResolve } },
+
+  { path: 'deletar/:id', component: DeletarProdutoComponent, resolve: { produto: ProdutoResolve } },
 ];
 
 @NgModule({
