@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ProdutoService } from '../Services/produto.service';
-import { CurrencyUtils } from 'src/app/utils/currency-utils';
 
 @Component({
   selector: 'app-novo',
@@ -14,7 +13,7 @@ import { CurrencyUtils } from 'src/app/utils/currency-utils';
 export class NovoComponent implements OnInit {
 
   produto: Produto;
-  produtoForm:FormGroup;
+  produtoForm: FormGroup;
 
 
   constructor(
@@ -28,52 +27,38 @@ export class NovoComponent implements OnInit {
 
     this.produtoForm = this.fb.group({
       cod: ['', [Validators.required]],
-      nome:['',[Validators.required]],
-      descProd:['',[Validators.required]],
-      qtdMensal:['',[Validators.required]],
-      qtdAtual:['',[Validators.required]],
-      dataCad:['',[Validators.required]],
+      nome: ['', [Validators.required]],
+      descProd: ['', [Validators.required]],
+      qtdMensal: ['', [Validators.required]],
+      qtdAtual: ['', [Validators.required]],
+      dataCad: ['', [Validators.required]],
     });
   }
 
-  novoProduto(){
+  novoProduto() {
     this.produto = Object.assign({}, this.produto, this.produtoForm.value);
-
-    this.produto.cod = CurrencyUtils.StringParaDecimal(this.produto.cod);
-
-    this.produto.qtdMensal = CurrencyUtils.StringParaDecimal(this.produto.qtdMensal);
-    this.produto.qtdAtual = CurrencyUtils.StringParaDecimal(this.produto.qtdAtual);
-
-    this.produtoService.novoProduto(this.produto).subscribe
-    (   
-      sucesso => { this.processarSucesso(sucesso) },
-      falha => { this.processarFalha(falha) }
-    )
-    console.log(this.produto);
-    console.log(this.produtoForm);
+    this.produtoService.novoProduto(this.produto)
+      .subscribe(sucesso => { this.processarSucesso(sucesso) },
+        falha => { this.processarFalha(falha) }
+      )
   }
 
-  processarSucesso(response: any){
+  processarSucesso(response: any) {
     this.produtoForm.reset();
-
     let toast = this.toastr.success('produto criado', 'Sucesso!');
-    if(toast){
-     toast.onHidden.subscribe(() => {
-      this.router.navigate(['produto/listar-todos'])
-     });
-   }
+    if (toast) {
+      toast.onHidden.subscribe(() => {
+        this.router.navigate(['produto/listar-todos'])
+      });
+    }
   }
 
-  processarFalha(fail: any){
+  processarFalha(fail: any) {
     this.toastr.error('Houve algum erro', 'Error!');
   }
 
-  returnList(){
+  returnList() {
     this.router.navigate(['produto/listar-todos'])
-  }
-
-  testebutton(){
-    console.log(this.produto);
   }
 
 }

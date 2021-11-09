@@ -14,21 +14,19 @@
   </div>
   <br>
   <div class="container">
-    <form>
-
-
+   
       <div class="row">
         <div class="col-mb-6">
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" [(ngModel)]="qtdAtual">
         </div>
         <div class="col-mb-3">
-          <button type="button" class="btn btn-primary">Adicionar Item</button>
+          <button type="button" class="btn btn-primary" (click)="editarValor()">Adicionar Item</button>
         </div>
       </div>
 
       <div class="row">
         <div class="col-mb-6">
-          <input type="text" class="form-control">
+          <input type="number" class="form-control">
         </div>
 
         <div class="col-mb-3">
@@ -39,9 +37,6 @@
       <div>
         <button type="submit" class="btn btn-primary">Voltar</button>
       </div>
-
-    </form>
+   
   </div>
-
-
 </div>

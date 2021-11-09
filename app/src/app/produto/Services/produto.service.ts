@@ -23,4 +23,8 @@ export class ProdutoService{
     obterPorId(id: number): Observable<Produto> {
         return this.http.get<Produto>(`${this.baseUrl}/${id}`);
       }
+
+      updateQuantidade(id: number, qtdAtual: number) {
+        return this.http.put(`${this.baseUrl}/update/${id}`, { id, qtdAtual });
+      }
 }

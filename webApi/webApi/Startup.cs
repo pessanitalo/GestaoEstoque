@@ -24,7 +24,7 @@ namespace webApi
             services.AddDbContext<DataContext>(options =>
             options.UseSqlServer(
                 Configuration.GetConnectionString("DefaultConnection")));
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
 
             services.AddCors();
         }

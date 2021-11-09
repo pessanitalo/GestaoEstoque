@@ -56,7 +56,7 @@ namespace webApi.Controllers
         public IActionResult updateQuantity(int id, atualizaQtd quantidade)
         {
            //chama o metodo que busca por ai
-            var produto = GetProdutoId(id);
+           var produto = GetProdutoId(id);
 
             //metodo que atualiza o banco
             produto.QtdAtual = produto.QtdAtual + quantidade.QtdAtual;
