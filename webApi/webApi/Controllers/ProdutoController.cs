@@ -53,13 +53,29 @@ namespace webApi.Controllers
         }
 
         [HttpPut("update/{id}")]
-        public IActionResult updateQuantity(int id, atualizaQtd quantidade)
+        public IActionResult updateQuantity(int id, atualizaQtd
+            quantidade)
         {
            //chama o metodo que busca por ai
            var produto = GetProdutoId(id);
 
             //metodo que atualiza o banco
             produto.QtdAtual = produto.QtdAtual + quantidade.QtdAtual;
+
+            _context.Update(produto);
+            _context.SaveChanges();
+            return Ok(produto);
+        }
+
+        [HttpPut("removeItem/{id}")]
+        public IActionResult removeItem(int id, atualizaQtd
+            quantidade)
+        {
+            //chama o metodo que busca por ai
+            var produto = GetProdutoId(id);
+
+            //metodo que atualiza o banco
+            produto.QtdAtual = produto.QtdAtual - quantidade.QtdAtual;
 
             _context.Update(produto);
             _context.SaveChanges();

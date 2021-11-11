@@ -1,5 +1,4 @@
 <div class="container topo">
-  <p>Alterar Estoque: {{produto.nome}}</p>
   <div class="card" style="width: 35rem;">
     <div class="card-header">
       Detalhes do Produto: <strong> {{produto.nome}} </strong>
@@ -14,29 +13,29 @@
   </div>
   <br>
   <div class="container">
-   
-      <div class="row">
-        <div class="col-mb-6">
-          <input type="text" class="form-control" [(ngModel)]="qtdAtual">
-        </div>
-        <div class="col-mb-3">
-          <button type="button" class="btn btn-primary" (click)="editarValor()">Adicionar Item</button>
-        </div>
+
+    <div class="row">
+      <div class="col-mb-6">
+        <input type="text" class="form-control" [(ngModel)]="qtdAtual">
+      </div>
+      <div class="col-mb-3">
+        <button type="button" class="btn btn-primary btnUpdate" (click)="editarValor()">Adicionar Item</button>
+      </div>
+    </div>
+
+    <div class="row btnRemove">
+      <div class="col-mb-6">
+        <input type="text" class="form-control" [(ngModel)]="removeQuanti">
       </div>
 
-      <div class="row">
-        <div class="col-mb-6">
-          <input type="number" class="form-control">
-        </div>
-
-        <div class="col-mb-3">
-          <button type="button" class="btn btn-danger">Remover Item</button>
-        </div>
+      <div class="col-mb-3">
+        <button type="button" class="btn btn-danger btnUpdate" (click)="removeQuantidade()">Remover Item</button>
       </div>
+    </div>
 
-      <div>
-        <button type="submit" class="btn btn-primary">Voltar</button>
-      </div>
-   
+    <div>
+      <button type="submit" class="btn btn-primary goBack" (click)="goBack()">Voltar</button>
+    </div>
+
   </div>
 </div>

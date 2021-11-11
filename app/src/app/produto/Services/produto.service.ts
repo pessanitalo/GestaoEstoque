@@ -27,4 +27,8 @@ export class ProdutoService{
       updateQuantidade(id: number, qtdAtual: number) {
         return this.http.put(`${this.baseUrl}/update/${id}`, { id, qtdAtual });
       }
+
+      removeQuanti(id: number, qtdAtual: number) {
+        return this.http.put(`${this.baseUrl}/removeItem/${id}`, { id, qtdAtual });
+      }
 }

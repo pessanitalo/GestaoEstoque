@@ -13,6 +13,7 @@ import { ProdutoService } from '../Services/produto.service';
 export class EditarProdutoComponent implements OnInit {
 
   public qtdAtual: number;
+  public removeQuanti: number;
   public produto: Produto;
 
   constructor(
@@ -26,7 +27,15 @@ export class EditarProdutoComponent implements OnInit {
   }
 
   editarValor() {
+    this.produto.qtdMensal = this.qtdAtual
     this.produtoService.updateQuantidade(this.produto.id, this.qtdAtual)
+      .subscribe(sucesso => { this.processarSucesso(sucesso) });
+    (falha) => { this.processarFalha(falha) };
+  }
+
+  removeQuantidade() {
+    this.produto.qtdMensal = this.qtdAtual
+    this.produtoService.removeQuanti(this.produto.id, this.removeQuanti)
       .subscribe(sucesso => { this.processarSucesso(sucesso) });
     (falha) => { this.processarFalha(falha) };
   }
@@ -42,6 +51,10 @@ export class EditarProdutoComponent implements OnInit {
 
   processarFalha(fail: any) {
     this.toastr.error('Houve algum erro', 'Error!');
+  }
+
+  goBack (){
+    this.router.navigate(['produto/listar-todos']);
   }
 
 }

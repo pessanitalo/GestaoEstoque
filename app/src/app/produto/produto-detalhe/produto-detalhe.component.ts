@@ -26,7 +26,7 @@ export class ProdutoDetalheComponent implements OnInit {
   }
 
   returnList(){
-    this.router.navigate(['produto/listar-todos'])
+    this.router.navigate(['produto/listar-todos']);
   }
 
 }
