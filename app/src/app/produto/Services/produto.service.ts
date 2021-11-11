@@ -31,4 +31,8 @@ export class ProdutoService{
       removeQuanti(id: number, qtdAtual: number) {
         return this.http.put(`${this.baseUrl}/removeItem/${id}`, { id, qtdAtual });
       }
+
+      removeItem(id: number) {
+        return this.http.delete(`${this.baseUrl}/remove/${id}`);
+      }
 }

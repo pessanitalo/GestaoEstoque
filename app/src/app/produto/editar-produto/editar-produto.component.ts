@@ -1,8 +1,7 @@
 import { Produto } from './../Models/produto';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
+import { ActivatedRoute,  Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { CurrencyUtils } from 'src/app/utils/currency-utils';
 import { ProdutoService } from '../Services/produto.service';
 
 @Component({
@@ -41,7 +40,7 @@ export class EditarProdutoComponent implements OnInit {
   }
 
   processarSucesso(response: any) {
-    let toast = this.toastr.success('produto editado', 'Sucesso!');
+    let toast = this.toastr.success('Produto Editado', 'Sucesso!');
     if (toast) {
       toast.onHidden.subscribe(() => {
         this.router.navigate(['produto/listar-todos'])

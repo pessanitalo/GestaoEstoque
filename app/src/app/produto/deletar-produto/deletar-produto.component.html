@@ -28,6 +28,9 @@
   <div class="modal-body">
     <p>Tem certeza que deseja remover o item? {{produto.nome}} </p>
   </div>
-  <button type="button" class="btn btn-secondary" (click)="returnList()">Voltar</button>
-  <button type="button" class="btn btn-secondary" (click)="returnList()">Voltar</button>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary">Voltar</button>
+    <button type="button" class="btn btn-primary" (click)="removerItem()">Confirmar</button>
+  </div>
 </ng-template>
+

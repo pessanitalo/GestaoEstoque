@@ -1,0 +1,7 @@
+.btn-danger, .btn-secondary, .btn-primary{
+    margin-top: 10px;
+}
+
+.btn-secondary{
+    margin-left: 5px;
+}

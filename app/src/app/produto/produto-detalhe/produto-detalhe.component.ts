@@ -13,19 +13,17 @@ export class ProdutoDetalheComponent implements OnInit {
   public produto: Produto;
 
   constructor(
-    private produtoService: ProdutoService,
     private route: ActivatedRoute,
     private router: Router
-    ) {
-      this.produto = this.route.snapshot.data['produto'];
-      
-     }
+  ) {
+    this.produto = this.route.snapshot.data['produto'];
 
-  ngOnInit(): void {
-    
   }
 
-  returnList(){
+  ngOnInit(): void {
+  }
+
+  returnList() {
     this.router.navigate(['produto/listar-todos']);
   }
 
