@@ -16,7 +16,7 @@ namespace webApi.Controllers
         {
             _context = context;
         }
-
+        //get sss
         [HttpGet]
         public IActionResult GetAll()
         {
